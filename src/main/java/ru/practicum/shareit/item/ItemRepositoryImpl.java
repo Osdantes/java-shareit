@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Repository("itemMemoryRepository")
+@Repository
 @Slf4j
 public class ItemRepositoryImpl implements ItemRepository {
     private final Map<Long, Map<Long, Item>> usersItems = new HashMap<>();

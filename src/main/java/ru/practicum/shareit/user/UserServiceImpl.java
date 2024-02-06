@@ -2,7 +2,7 @@ package ru.practicum.shareit.user;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.practicum.shareit.exception.ExistEmailException;
+import ru.practicum.shareit.exception.AlreadyExistEmailException;
 import ru.practicum.shareit.exception.InvalidEmailException;
 import ru.practicum.shareit.exception.InvalidUserIdException;
 import ru.practicum.shareit.user.dto.UserDto;
@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
             throw new InvalidEmailException();
         }
         if (isEmailExists(0, userDto.getEmail())) {
-            throw new ExistEmailException();
+            throw new AlreadyExistEmailException();
         }
         return userRepository.cteateUser(userDto);
     }
@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
             throw new InvalidUserIdException(userId);
         }
         if (isEmailExists(userId, userDto.getEmail())) {
-            throw new ExistEmailException();
+            throw new AlreadyExistEmailException();
         }
         return userRepository.updateUser(userId, userDto);
     }

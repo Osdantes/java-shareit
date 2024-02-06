@@ -12,19 +12,16 @@ public class ErrorHandler {
 
     @ExceptionHandler
     public ErrorResponse handleUserValidationException(final InvalidEmailException e) {
-        //log.error(e.getMessage(), e);
         return new ErrorResponse(e.getMessage());
     }
 
     @ExceptionHandler
     public ErrorResponse handleInvalidPathVariableException(final InvalidPathVariableException e) {
-        //log.error(e.getMessage(), e);
         return new ErrorResponse(e.getMessage());
     }
 
     @ExceptionHandler
     public ErrorResponse handleInvalidUserIdException(final InvalidUserIdException e) {
-        //log.error(e.getMessage(), e);
         return new ErrorResponse(e.getMessage());
     }
 
