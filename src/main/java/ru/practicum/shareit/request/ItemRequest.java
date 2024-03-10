@@ -6,7 +6,9 @@ import org.hibernate.proxy.HibernateProxy;
 import ru.practicum.shareit.user.User;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -16,11 +18,13 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "requests", schema = "public")
 @AllArgsConstructor
+@NoArgsConstructor
 public class ItemRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    Long id;
 
+    @NotBlank
     String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -41,7 +45,7 @@ public class ItemRequest {
         Class<?> thisEffectiveClass = this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass() : this.getClass();
         if (thisEffectiveClass != oEffectiveClass) return false;
         ItemRequest that = (ItemRequest) o;
-        return false;
+        return getId() != null && Objects.equals(getId(), that.getId());
     }
 
     @Override

@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
+@RequiredArgsConstructor
 @Builder
 @Entity
 @Table(name = "comments", schema = "public")
