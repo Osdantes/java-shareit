@@ -10,7 +10,6 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
 @Builder
 @Entity
 @Table(name = "items", schema = "public")
