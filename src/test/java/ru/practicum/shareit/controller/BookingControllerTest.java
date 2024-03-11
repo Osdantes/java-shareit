@@ -130,8 +130,8 @@ public class BookingControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(1L), Long.class))
                 .andExpect(jsonPath("$.status", is(String.valueOf(lastBookingDto.getStatus()))))
-                .andExpect(jsonPath("$.start", is(String.valueOf(lastBookingDto.getStartDate().format(DateTimeFormatter.ISO_DATE_TIME)))))
-                .andExpect(jsonPath("$.end", is(String.valueOf(lastBookingDto.getEndDate().format(DateTimeFormatter.ISO_DATE_TIME)))));
+                .andExpect(jsonPath("$.start", is(lastBookingDto.getStartDate().format(DateTimeFormatter.ISO_DATE_TIME))))
+                .andExpect(jsonPath("$.end", is(lastBookingDto.getEndDate().format(DateTimeFormatter.ISO_DATE_TIME))));
     }
 
     @Test
@@ -162,8 +162,8 @@ public class BookingControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(1L), Long.class))
                 .andExpect(jsonPath("$.status", is(String.valueOf(lastBookingDto.getStatus()))))
-                .andExpect(jsonPath("$.start", is(String.valueOf(lastBookingDto.getStartDate().format(DateTimeFormatter.ISO_DATE_TIME)))))
-                .andExpect(jsonPath("$.end", is(String.valueOf(lastBookingDto.getEndDate().format(DateTimeFormatter.ISO_DATE_TIME)))));
+                .andExpect(jsonPath("$.start", is(lastBookingDto.getStartDate().format(DateTimeFormatter.ISO_DATE_TIME))))
+                .andExpect(jsonPath("$.end", is(lastBookingDto.getEndDate().format(DateTimeFormatter.ISO_DATE_TIME))));
     }
 
     @Test
@@ -181,8 +181,8 @@ public class BookingControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(1L), Long.class))
                 .andExpect(jsonPath("$.status", is(String.valueOf(lastBookingDto.getStatus()))))
-                .andExpect(jsonPath("$.start", is(String.valueOf(lastBookingDto.getStartDate().format(DateTimeFormatter.ISO_DATE_TIME)))))
-                .andExpect(jsonPath("$.end", is(String.valueOf(lastBookingDto.getEndDate().format(DateTimeFormatter.ISO_DATE_TIME)))));
+                .andExpect(jsonPath("$.start", is(lastBookingDto.getStartDate().format(DateTimeFormatter.ISO_DATE_TIME))))
+                .andExpect(jsonPath("$.end", is(lastBookingDto.getEndDate().format(DateTimeFormatter.ISO_DATE_TIME))));
     }
 
     @Test
