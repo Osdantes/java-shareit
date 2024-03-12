@@ -148,10 +148,10 @@
 						<output>file</output>
 						<excludes>
 							<exclude>**/*ItemRequest.class</exclude>
-							<exclude>**/*BookingServiceImpl.class</exclude>
-							<exclude>**/*ItemServiceImpl.class</exclude>
-							<exclude>**/*Item.class</exclude>
-							<exclude>**/*ItemMapper.class</exclude>
+							<exclude>**/*User.class</exclude>
+							<exclude>**/*UserMapper.class</exclude>
+							<exclude>**/*Comment.class</exclude>
+							<exclude>**/*CommentMapper.class</exclude>
 						</excludes>
 					</configuration>
 					<executions>
