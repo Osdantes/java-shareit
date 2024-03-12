@@ -150,8 +150,8 @@
 							<exclude>**/*ItemRequest.class</exclude>
 							<exclude>**/*User.class</exclude>
 							<exclude>**/*UserMapper.class</exclude>
-							<exclude>**/*Comment.class</exclude>
-							<exclude>**/*CommentMapper.class</exclude>
+							<exclude>**/*Booking.class</exclude>
+							<exclude>**/*BookingMapper.class</exclude>
 						</excludes>
 					</configuration>
 					<executions>
