@@ -154,6 +154,9 @@
 							<exclude>**/BookingMapper.class</exclude>
 							<exclude>**/Item.class</exclude>
 							<exclude>**/ItemMapper.class</exclude>
+							<exclude>**/Comment.class</exclude>
+							<exclude>**/CommentMapper.class</exclude>
+							<exclude>**/ErrorHandler.class</exclude>
 						</excludes>
 					</configuration>
 					<executions>
