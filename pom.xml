@@ -152,6 +152,8 @@
 							<exclude>**/*UserMapper.class</exclude>
 							<exclude>**/*Booking.class</exclude>
 							<exclude>**/*BookingMapper.class</exclude>
+							<exclude>**/*Item.class</exclude>
+							<exclude>**/*ItemMapper.class</exclude>
 						</excludes>
 					</configuration>
 					<executions>
