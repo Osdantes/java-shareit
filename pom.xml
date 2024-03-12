@@ -148,9 +148,10 @@
 						<output>file</output>
 						<excludes>
 							<exclude>**/*ItemRequest.class</exclude>
-							<exclude>**/*ErrorHandler.class</exclude>
 							<exclude>**/*Comment.class</exclude>
-							<exclude>**/*ShareItApp.class</exclude>
+							<exclude>**/*CommentMapper.class</exclude>
+							<exclude>**/*ErrorHandler.class</exclude>
+							<exclude>**/*Item.class</exclude>
 						</excludes>
 					</configuration>
 					<executions>
