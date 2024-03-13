@@ -148,21 +148,9 @@
 						<output>file</output>
 						<excludes>
 							<exclude>**/*ItemRequest.class</exclude>
-							<exclude>**/*User.class</exclude>
-							<exclude>**/*UserMapper.class</exclude>
-							<exclude>**/*UserServiceImpl.class</exclude>
-							<exclude>**/*Booking.class</exclude>
-							<exclude>**/*BookingMapper.class</exclude>
-							<exclude>**/*BookingServiceImpl.class</exclude>
-							<exclude>**/*Item.class</exclude>
-							<exclude>**/*ItemMapper.class</exclude>
-							<exclude>**/*ItemServiceImpl.class</exclude>
-							<exclude>**/*ItemRequestMapper.class</exclude>
-							<exclude>**/*ItemRequestServiceImpl.class</exclude>
-							<exclude>**/*Comment.class</exclude>
-							<exclude>**/*CommentMapper.class</exclude>
-							<exclude>**/*ErrorHandler.class</exclude>
-							<exclude>**/*ShareItApp.class</exclude>
+							<exclude>**/*ExistEmailException.class</exclude>
+							<exclude>**/*InvalidItemArrtsException.class</exclude>
+							<exclude>**/*AlreadyExistEmailException.class</exclude>
 						</excludes>
 					</configuration>
 					<executions>
