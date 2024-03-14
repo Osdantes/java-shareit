@@ -88,16 +88,14 @@ public class BookingServiceImpl implements BookingService {
         if (state == null || state.isBlank() || state.isEmpty()) {
             state = BookingState.ALL.toString();
         }
-        if (from == null || size == null) {
-            return getBookingByState(userId, state);
-        } else if (from < 0 || size <= 0) {
+        if (from < 0) {
             throw new InvalidPathVariableException("Incorrect page parameters");
-        } else {
-            int pageNumber = from / size;
-            final Pageable page = PageRequest.of(pageNumber, size, Sort.by(Sort.Direction.ASC, "id"));
-            return getBookingByState(userId, state, page).getContent();
         }
+        int pageNumber = from / size;
+        final Pageable page = PageRequest.of(pageNumber, size, Sort.by(Sort.Direction.ASC, "id"));
+        return getBookingByState(userId, state, page).getContent();
     }
+
 
     private Page<Booking> getBookingByState(long userId, String state, Pageable page) {
         try {

@@ -14,11 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.practicum.shareit.booking.dto.BookingDto;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Positive;
 import java.util.List;
 
-/**
- * TODO Sprint add-bookings.
- */
 @RestController
 @Slf4j
 @RequiredArgsConstructor
@@ -56,8 +55,8 @@ public class BookingController {
     @GetMapping
     public List<Booking> getBookingsByState(@RequestHeader("X-Sharer-User-Id") long userId,
                                             @RequestParam(required = false) String state,
-                                            @RequestParam(required = false) Integer from,
-                                            @RequestParam(required = false) Integer size)  {
+                                            @RequestParam(required = false, defaultValue = "0") Integer from,
+                                            @Positive @RequestParam(required = false, defaultValue = "50") Integer size)  {
         log.info("Request for get {} bookings in state {} from user {} from {}", size, state, userId, from);
         return bookingService.getBookingByState(userId, state, from, size);
     }
