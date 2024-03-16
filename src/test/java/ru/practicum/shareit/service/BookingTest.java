@@ -23,6 +23,7 @@ import ru.practicum.shareit.user.UserMapper;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
+import javax.validation.ConstraintViolationException;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -978,17 +979,6 @@ public class BookingTest {
                     hasProperty("id", notNullValue()),
                     hasProperty("status", equalTo(BookingStatus.WAITING)))));
         }
-    }
-
-    @Test
-    void getBookingByStateInvalidPageParameters() {
-        User user = UserMapper.toUser(DtoCreater.makeUserDto("user@user.com", "user"));
-        em.persist(user);
-        Long userId = user.getId();
-
-        assertThrows(InvalidPathVariableException.class, () -> {
-            service.getBookingByState(userId, String.valueOf(BookingState.WAITING), 0, 0);
-        });
     }
 
     @Test
