@@ -13,12 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.practicum.shareit.booking.dto.BookingDto;
 
-import javax.validation.Valid;
 import java.util.List;
 
-/**
- * TODO Sprint add-bookings.
- */
 @RestController
 @Slf4j
 @RequiredArgsConstructor
@@ -28,7 +24,7 @@ public class BookingController {
 
     @PostMapping
     public Booking addBookingRequest(@RequestHeader("X-Sharer-User-Id") long userId,
-                                     @Valid @RequestBody BookingDto bookingDto) {
+                                     @RequestBody BookingDto bookingDto) {
         log.info("Request for booking item {} from user {}", bookingDto.getItemId(), userId);
         return bookingService.createBooking(userId, bookingDto);
     }

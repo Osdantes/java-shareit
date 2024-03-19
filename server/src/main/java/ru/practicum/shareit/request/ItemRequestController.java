@@ -13,12 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.practicum.shareit.request.dto.ItemRequestDto;
 import ru.practicum.shareit.request.dto.ItemRequestDtoWithItems;
 
-import javax.validation.Valid;
 import java.util.List;
 
-/**
- * TODO Sprint add-item-requests.
- */
+
 @RestController
 @RequestMapping(path = "/requests")
 @RequiredArgsConstructor
@@ -28,7 +25,7 @@ public class ItemRequestController {
 
     @PostMapping
     public ItemRequest createItemRequest(@RequestHeader("X-Sharer-User-Id") long userId,
-                                         @Valid @RequestBody ItemRequestDto itemRequestDto) {
+                                         @RequestBody ItemRequestDto itemRequestDto) {
         log.info("Request for request for item {} from user {} creation", itemRequestDto.getDescription(), userId);
         return requestService.createItemRequest(userId, itemRequestDto);
     }

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -22,13 +21,13 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public User createUser(@Valid @RequestBody UserDto userDto) {
+    public User createUser(@RequestBody UserDto userDto) {
         log.info("Request for user {} creation", userDto.getEmail());
         return userService.createUser(userDto);
     }
 
     @PatchMapping("/{userId}")
-    public User updateUser(@PathVariable long userId, @Valid @RequestBody UserDto userDto) {
+    public User updateUser(@PathVariable long userId, @RequestBody UserDto userDto) {
         log.info("Request for user {} update", userId);
         return userService.updateUser(userId, userDto);
     }
